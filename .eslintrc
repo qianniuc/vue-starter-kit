@@ -1,0 +1,21 @@
+{
+  "globals": {},
+  "extends": "airbnb-base",
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "indent": [2, 4],
+    "arrow-parens": [2, "as-needed"],
+    "no-unused-vars": 0,
+    "eol-last": 0,
+    "no-plusplus": 0,
+    "no-param-reassign": 0,
+    "no-useless-escape": 0,
+    "global-require": 0,
+    "no-shadow": 0,
+    "no-new": 0,
+    "no-console": 0 //控制台打印信息不警告
+  }
+}

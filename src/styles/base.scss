@@ -1,0 +1,18 @@
+@import './variable';
+
+.clearfix:after {
+  clear: both;
+  display: table;
+  content: "";
+}
+div, a, img, li {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+a {
+  text-decoration: none;
+}
+input, button {
+  appearance: none;
+  outline: none;
+}
