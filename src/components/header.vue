@@ -1,6 +1,6 @@
 <template>
     <header>
-        {{ message }}
+        {{ message }}{{ count }}
     </header>
 </template>
 
@@ -8,6 +8,11 @@
     import appService from '../services/app.service';
 
     export default {
+//        vuex: {
+//            getters: {
+//                count: state => console.log(state),
+//            },
+//        },
         data() {
             return {
                 message: 'header',
@@ -19,6 +24,12 @@
         methods: {
             getUserInfo() {
                 appService.getUserInfo().then(res => console.log(res.data));
+            }
+        },
+        computed:{
+            count : function() {
+                console.log(this.$store.getters);
+                return this.$store.getters.count;
             }
         }
     };

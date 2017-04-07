@@ -2,8 +2,9 @@ import 'babel-polyfill';
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
-import routes from './routes/index';
 import env from './env';
+import store from './vuex/store';
+import routes from './routes/index';
 import App from './containers/index.vue';
 
 Vue.use(VueRouter);
@@ -17,6 +18,7 @@ const router = new VueRouter({
 
 new Vue({
     el: '#app',
+    store,
     router,
     render: h => h(App),
 });
