@@ -1,7 +1,7 @@
 <template>
     <div>
-        <HeaderBar />
-        <Menus />
+        <header-bar />
+        <menus />
         <router-view />
     </div>
 </template>
@@ -13,12 +13,7 @@
     export default {
         components: {
             HeaderBar,
-            Menus
-        },
-        data() {
-            return {
-                message: 'Hello Vue!',
-            };
+            Menus,
         },
     };
 </script>

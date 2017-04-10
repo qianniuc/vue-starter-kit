@@ -1,18 +1,14 @@
 <template>
-    <header>
+    <header @click="click">
         {{ message }}{{ count }}
     </header>
 </template>
 
 <script>
+    import { mapState, mapGetters, mapActions } from 'vuex';
     import appService from '../services/app.service';
 
     export default {
-//        vuex: {
-//            getters: {
-//                count: state => console.log(state),
-//            },
-//        },
         data() {
             return {
                 message: 'header',
@@ -22,16 +18,17 @@
             this.getUserInfo();
         },
         methods: {
+            ...mapActions(['ADD_ONE']),
+            click() {
+                this.$store.dispatch('ADD_ONE');
+            },
             getUserInfo() {
                 appService.getUserInfo().then(res => console.log(res.data));
-            }
+            },
         },
-        computed:{
-            count : function() {
-                console.log(this.$store.getters);
-                return this.$store.getters.count;
-            }
-        }
+        computed: {
+            ...mapState(['count']),
+        },
     };
 </script>
 

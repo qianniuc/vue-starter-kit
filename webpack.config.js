@@ -44,6 +44,7 @@ module.exports = {
                 loader: 'vue-loader',
                 options: {
                     loaders: {
+                        js: 'babel-loader!eslint-loader',
                         scss: (IS_BUILD ? ExtractTextPlugin.extract({
                             fallback: 'style-loader',
                             use: 'css-loader!postcss-loader!sass-loader'
