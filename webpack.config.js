@@ -46,6 +46,7 @@ module.exports = {
                     loaders: {
                         js: 'babel-loader!eslint-loader',
                         scss: (IS_BUILD ? ExtractTextPlugin.extract({
+                            publicPath: '../',
                             fallback: 'style-loader',
                             use: 'css-loader!postcss-loader!sass-loader'
                         }) : 'style-loader!css-loader!postcss-loader!sass-loader')
@@ -60,6 +61,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: (IS_BUILD ? ExtractTextPlugin.extract({
+                        publicPath: '../',
                         fallback: 'style-loader',
                         use: 'css-loader!postcss-loader'
                     }) : 'style-loader!css-loader!postcss-loader')
@@ -67,6 +69,7 @@ module.exports = {
             {
                 test: /\.s[a|c]ss$/,
                 loader: (IS_BUILD ? ExtractTextPlugin.extract({
+                        publicPath: '../',
                         fallback: 'style-loader',
                         use: 'css-loader!postcss-loader!sass-loader'
                     }) : 'style-loader!css-loader!postcss-loader!sass-loader')
